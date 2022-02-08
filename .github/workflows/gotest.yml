@@ -8,7 +8,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'The path of the folder where the _test.go file is'
         # Default value if no value is explicitly provided
-        default: 'answer_list/week48/4821-cr/'
+        default: 'answer_list/2022/0222/cr'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -25,5 +25,5 @@ jobs:
         go-version: 1.17
     
     - name: Test and Benchmark
-      run: go test -v -benchmem -bench=.
+      run: go test -v -benchmem -bench=. -cover
       working-directory: ${{ github.event.inputs.path }}
